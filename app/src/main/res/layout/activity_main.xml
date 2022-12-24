@@ -9,6 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#00796B"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,20 +19,20 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#004C40"
             android:text="Galeria"
-            android:textSize="34sp"
             android:textColor="#FFF"
-            android:background="#004C40"/>
+            android:textSize="34sp" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/obraz"
             android:layout_width="match_parent"
             android:layout_height="258dp"
-            app:srcCompat="@drawable/cat3" />
+            app:srcCompat="@drawable/cat1" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
@@ -39,9 +40,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Prev"
                 android:background="#004C40"
-                />
+                android:onClick="prevtPhoto"
+                android:text="Prev"
+                android:textColor="#fff" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -53,9 +55,63 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#004C40"
+                android:onClick="nextPhoto"
                 android:text="Next"
-                android:background="#004C40"/>
+                android:textColor="#fff" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Który obraz wyświetlić?"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/idPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="number"
+                android:onClick="showImage"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Switch
+                android:id="@+id/changeBackground"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Tło niebieskie?"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/autor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#004C40"
+            android:gravity="bottom"
+            android:text="Autor: 00000000000000" />
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
